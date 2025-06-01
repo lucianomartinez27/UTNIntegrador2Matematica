@@ -116,3 +116,54 @@ if __name__ == "__main__":
     calcular_predominio_digitos_altos(conjunto1)
     calcular_predominio_digitos_altos(conjunto2)
 
+#//////////////////////// anios /////////////////////
+
+lista_anios = [1995, 1997]
+
+# Contar cuántos nacieron en años pares e impares utilizando estructuras repetitivas.
+def anio_par_impar(anios):
+    pares = 0
+    impares = 0
+
+    for anio in anios:
+        if anio % 2 == 0:
+            pares += 1
+        else:
+            impares += 1 
+
+    print(f'Nacidos en años pares: {pares}')
+    print(f'Nacidos en años impares: {impares}')
+
+# Si todos nacieron después del 2000, mostrar "Grupo Z".
+def grupo_z(anio):
+    todos_son_mayores = True
+    for anio in lista_anios:
+        if anio <= 2000:
+            todos_son_mayores = False
+            print('El grupo tiene años menores a 2000')
+            break
+    if todos_son_mayores:
+        print("Grupo Z")
+
+# Calcular el producto cartesiano entre el conjunto de años y el conjunto de edades actuales.
+def producto_cartesiano(anios):
+    edades = [29, 27]
+
+    cartesiano = []
+
+    for lista_anios in anios:
+        for edad in edades:
+            cartesiano.append((lista_anios, edad))
+
+    print(cartesiano)
+
+# Implementar una función para determinar si un año es bisiesto.
+def es_bisiesto(anio):
+    return (anio % 4 == 0 and anio % 100 != 0) or (anio % 400 == 0)
+
+# Si alguno nació en año bisiesto, mostrar "Tenemos un año especial".
+def verificar_anios_bisiestos(lista_anios):
+    if any(es_bisiesto(anio) for anio in lista_anios):
+        print("Tenemos un año especial")
+    else:
+        print("Ningún año es bisiesto")
