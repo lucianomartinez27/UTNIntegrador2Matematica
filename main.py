@@ -176,3 +176,4 @@ if __name__ == "__main__":
     producto_cartesiano(lista_anios)
     verificar_anios_bisiestos(lista_anios)
     grupo_z()
+    anio_par_impar(lista_anios)
